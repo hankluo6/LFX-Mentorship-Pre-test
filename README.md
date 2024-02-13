@@ -60,9 +60,10 @@ cmake --install build
 
 ## Troubleshooting
 
-1. `simdjson` not found
-
+1. `simdjson` not found (Fix for [#2791](https://github.com/WasmEdge/WasmEdge/pull/3206))
+    
     This error occurs when `simdjson` is already installed on the system. `find_package` can find the `simdjson` package, but the `target_link_libraries` command is not able to link the `simdjson` library. To resolve this issue, change `simdjson` to `simdjson::simdjson` in `plugins/wasi_nn/CMakeLists.txt`
+
 
 2. Segmentation fault because `ggml-metal.metal` not found:
 
